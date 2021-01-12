@@ -1,0 +1,48 @@
+import java.util.*;
+public class DailyWeightChanges {
+ 
+  public ArrayList<Double> getWeightChanges(ArrayList<Double> a){
+    int b = 0;
+    ArrayList<Double> c = new ArrayList<Double>(a.size()-1); 
+    for(int i = 0; i < a.size(); i++){
+      Double d = a.get(i+1) - a.get(i); 
+      c.add(d);
+    }
+    return c;
+  }
+  
+  public ArrayList<Double> getWeights(ArrayList<Double> a, double b){
+    ArrayList<Double> c = new ArrayList<Double>(a.size()+1); 
+    for(double i : a){
+      b += a.get(i);
+    }
+    return c;
+  }
+  
+  public ArrayList<Double> getWeightRuns(ArrayList<Double> a){
+    ArrayList<Double> b = new ArrayList<Double>(2);
+    double c = 0, d = 0;
+   
+    for(int i = 0; i < a.size(); i++){
+      if(a.get(i) < a.get(i+1)){
+        c++;
+      }
+      if(a.get(i) > a.get(i+1)){
+        d++;
+      }
+
+    }
+    b.add(d);
+    b.add(c);
+    return b;
+  }
+  
+  
+  
+  
+  public static void main(String[] args) {
+    
+    System.out.println("My compiler does not let me compile without this useless method. :( )");
+    
+  }
+}
